@@ -1,7 +1,7 @@
 {
-  "name": "personal-website",
+  "name": "airbnb",
   "version": "1.0.0",
-  "description": "personal-website project",
+  "description": "airbnb front end capstone",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development"
