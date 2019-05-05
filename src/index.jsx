@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Navigation from './components/Navigation/Navigation.jsx';
 
 const App = () => {
   return (
-    <h1>CONNECTED!</h1>
+      <Navigation/>
   )
 }
 
