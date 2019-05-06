@@ -130,6 +130,16 @@ textarea:focus {
   margin-left: 6px;
 }
 
-.tour-text {
+.tour-button-left-div {
+  float: left;
+  margin-top: 1px;
+}
+
+.tour-button-right-div {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.5em;
+  letter-spacing: 0.083em;
+  color: #484848;
   float: auto;
 }
