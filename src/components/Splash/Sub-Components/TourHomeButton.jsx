@@ -10,7 +10,7 @@ class TourHomeButton extends React.Component {
   }
 
   onClick() {
-    console.log('someone clicked me!');
+    alert('redirecting to gallery page...');
   }
 
   render() {
