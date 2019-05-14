@@ -10,7 +10,7 @@ class Photo extends React.Component {
   }
   render() {
     return (
-      <div className="single-photo">
+      <div className="single-photo" onClick={this.props.callback}>
         <img src={this.props.link} alt="photo" className="photo" />
         <div className="photo-title">{this.props.title}</div>
       </div>
