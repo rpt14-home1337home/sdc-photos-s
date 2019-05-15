@@ -27,14 +27,13 @@ class App extends React.Component {
     this.setState({
       isHome: !this.state.isHome,
     });
-    console.log('here');
   }
 
   render() {
     if (this.state.isHome) {
       return <Home callback={this.onClick} />;
     } else {
-      return <Photos callback={this.onClick}/>;
+      return <Photos callback={this.onClick} />;
     }
   }
 }
