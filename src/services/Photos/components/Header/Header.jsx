@@ -8,10 +8,13 @@ import Button from './Sub-Components/Button.jsx';
 const Header = (props) => {
   return (
     <div className="photos-header">
-      <Arrow callback={props.callback} />
-      <Button />
+      <Arrow backCallback={props.backCallback} />
+      <Button
+        buttonCallback={props.buttonCallback}
+        buttonText={props.buttonText}
+      />
     </div>
-  )
-}
+  );
+};
 
 export default Header;

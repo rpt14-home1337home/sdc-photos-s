@@ -1,10 +1,10 @@
 import React from 'react';
-import './Body.css';
+import './BodyCollapse.css';
 
 // components
 import PhotoStrip from './Sub-Components/PhotoStrip.jsx';
 
-class Body extends React.Component {
+class BodyCollapse extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -40,4 +40,4 @@ class Body extends React.Component {
   }
 }
 
-export default Body;
+export default BodyCollapse;

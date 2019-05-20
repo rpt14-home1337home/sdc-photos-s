@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+/* FIVE */
+
+.expand-room-container-five {
+  width: 50%;
+  margin: 4% 24%;
+  height: 1650px;
+  /* background-color: lightgreen; */
+}
+
+.expand-room-name-five {
+  color: rgb(72, 72, 72);
+  font-size: 32;
+  font-weight: 500;
+  line-height: 1.125em;
+}
+
+.expand-room-details-five {
+  color: #767676;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.375em;
+  padding-top: 3px;
+}
+
+.expand-photo-one-five {
+  width: 100%;
+  height: 650px;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 2% 0% 1.5% 0%;
+}
+
+.expand-photo-two-five {
+  width: 33%;
+  height: 12%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0%;
+  /* display: block; */
+}
+
+/* how to fix this and make it not so static */
+.expand-photo-three-five {
+  width: 65.1%;
+  height: 24.86%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0.4%;
+  left: 34.5%;
+  position: relative;
+  bottom: 424px;
+}
+
+.expand-review-five {
+  width: 66%;
+  height: 29.2%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0%;
+  position: relative;
+  bottom: 25.6%;
+}
+
+.expand-last-photo-five {
+  width: 32%;
+  height: 29.2%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0%;
+  position: relative;
+  bottom: 56.5%;
+  float: right;
+}
+
+/* FOUR */
+
+.expand-room-container-four {
+  width: 50%;
+  margin: 4% 24%;
+  height: 1650px;
+  /* background-color: lightgreen; */
+}
+
+.expand-room-name-four {
+  color: rgb(72, 72, 72);
+  font-size: 32;
+  font-weight: 500;
+  line-height: 1.125em;
+}
+
+.expand-room-details-four {
+  color: #767676;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.375em;
+  padding-top: 3px;
+}
+
+.expand-photo-one-four {
+  width: 100%;
+  height: 650px;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 2% 0% 1.5% 0%;
+}
+
+.expand-photo-two-four {
+  width: 33%;
+  height: 12%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0%;
+  /* display: block; */
+}
+
+/* how to fix this and make it not so static */
+.expand-photo-three-four {
+  width: 65.1%;
+  height: 24.86%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0.4%;
+  left: 34.5%;
+  position: relative;
+  bottom: 424px;
+}
+
+.expand-review-four {
+  width: 100%;
+  height: 29.2%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0%;
+  position: relative;
+  bottom: 25.6%;
+}
+
+/* THREE */
+
+.expand-room-container-three {
+  width: 50%;
+  margin: 4% 24%;
+  height: 1650px;
+  /* background-color: lightgreen; */
+}
+
+.expand-room-name-three {
+  color: rgb(72, 72, 72);
+  font-size: 32;
+  font-weight: 500;
+  line-height: 1.125em;
+}
+
+.expand-room-details-three {
+  color: #767676;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.375em;
+  padding-top: 3px;
+}
+
+.expand-photo-one-three {
+  width: 100%;
+  height: 650px;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 2% 0% 1.5% 0%;
+}
+
+.expand-photo-two-three {
+  width: 33%;
+  height: 12%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0%;
+  /* display: block; */
+}
+
+/* how to fix this and make it not so static */
+.expand-photo-three-three {
+  width: 65.1%;
+  height: 24.86%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0.4%;
+  left: 34.5%;
+  position: relative;
+  bottom: 424px;
+}
+
+.expand-review-three {
+  width: 100%;
+  height: 29.2%;
+  /* background-color: lightcoral; */
+  border: 1px solid #EBEBEB;
+  margin: 1.5% 0%;
+  position: relative;
+  bottom: 25.6%;
+}

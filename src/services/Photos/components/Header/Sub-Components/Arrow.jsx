@@ -5,7 +5,7 @@ const arrow =
 
 const Arrow = (props) => {
   return (
-    <div onClick={props.callback}>
+    <div onClick={props.backCallback}>
       <svg viewBox="0 0 18 18" className="photos-back-arrow">
         <path d={arrow} />
       </svg>

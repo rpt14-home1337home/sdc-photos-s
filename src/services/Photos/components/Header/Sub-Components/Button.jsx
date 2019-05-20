@@ -13,13 +13,13 @@ class Button extends React.Component {
   render() {
     return (
       <div className="photos-view-button-div">
-        <button className="photo-view-button">
+        <button className="photo-view-button" onClick={this.props.buttonCallback}>
           <div className="photo-button-left-div">
             <svg viewBox="0 0 16 16" className="tour-icon">
               <path d={tourIcon} />
             </svg>
           </div>
-          <div className="photo-button-right-div">Tour this home</div>
+          <div className="photo-button-right-div">{this.props.buttonText}</div>
         </button>
       </div>
     );

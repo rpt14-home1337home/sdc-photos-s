@@ -5,14 +5,7 @@ import ReactDOM from 'react-dom';
 import Home from './services/Home/Home.jsx';
 import Photos from './services/Photos/Photos.jsx';
 
-// delete later, for reference only
-// const endOfPage = {
-//   width: "100%",
-//   height: "480px",
-//   backgroundColor: "lightgoldenrodyellow",
-//   marginTop: "20px",
-//   float: "left",
-// }
+// GET PHOTOS HERE, SO YOU CAN PASS TO MAIN PAGE, PHOTO GALLERY PAGE, AND PHOTO DETAILS PAGE
 
 class App extends React.Component {
   constructor() {
