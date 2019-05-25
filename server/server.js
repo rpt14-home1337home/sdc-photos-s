@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
-// const dbConnection = require('./../db/db.js');
+const dbConnection = require('./../db/db.js');
 const key = require('./../src/config/unsplash.js');
 const app = express();
 const port = process.env.port || 3000;
@@ -12,10 +12,22 @@ app.use(bodyParser.json());
 
 app.get('/data', (req, res) => {
 
-  const search = 'bed';
+  const collections = {
+    LivingRoom : '4872136',
+    Kitchen    : '4872137',
+    Bedroom    : '4872138',
+    Bathroom   : '4872140',
+    Backyard   : '4872142',
+    Pets       : '4872143',
+    Interior   : '4872144',
+    Other      : '4872146',
+  }
+
+  const search = 'LivingRoom';
 
   fetch(
-    `https://api.unsplash.com/search/photos/?query=${search}&client_id=${key.UNSPLASH_API_KEY}`,
+    // `https://api.unsplash.com/search/photos/?query=${search}&client_id=${key.UNSPLASH_API_KEY}`,
+    `https://api.unsplash.com/collections/${collections[search]}/photos/?client_id=${key.UNSPLASH_API_KEY}`,
     {
       method: 'GET',
       headers: {
@@ -25,18 +37,27 @@ app.get('/data', (req, res) => {
   )
     .then((res) => res.json())
     .then((data) => {
-      // for (let i = 0; i < data.results.length; i++) {
+      // for (let i = 0; i < data.length; i++) {
       //   dbConnection.insertIntoDB(
-      //     data.results[i].id,
-      //     data.results[i].likes,
-      //     data.results[i].user.username,
-      //     data.results[i].urls.regular,
+      //     data[i].id,
+      //     data[i].likes,
+      //     data[i].user.username,
+      //     data[i].urls.regular,
       //     search,
       //   );
       // }
-      res.send(data.results);
+      res.send(data);
     });
 });
+
+// send a request body to 'GET' endpoint to figure out what you want to query
+
+app.get('/retrieve', (req, res) => {
+
+  dbConnection.retrieve((data) => {
+    res.send(data);
+  })
+})
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);

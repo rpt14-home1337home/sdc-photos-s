@@ -9,7 +9,6 @@ class Photos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
       isCollapsed: true,
       buttonText: 'Tour this home',
     };
@@ -35,7 +34,11 @@ class Photos extends React.Component {
           buttonCallback={this.onClick}
           buttonText={this.state.buttonText}
         />
-        {this.state.isCollapsed ? <BodyCollapse /> : <BodyExpand />}
+        {this.state.isCollapsed ? (
+          <BodyCollapse photos={this.props.photos} />
+        ) : (
+          <BodyExpand photos={this.props.photos} />
+        )}
       </div>
     );
   }

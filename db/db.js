@@ -21,10 +21,24 @@ const insertIntoDB = (id, likes, username, link, tag) => {
   })
 }
 
-// insertIntoDB('hello', 64, 'allz', 'www.hello.com');
+
+const retrieve = (callback) => {
+
+  const sql = `SELECT *
+               FROM photos`;
+
+  connection.query(sql, (err, row) => {
+    if (err) {
+      console.log(err);
+    } else {
+      callback(row);
+    }
+  })
+}
 
 // connection.end();
 
 module.exports = {
   insertIntoDB,
+  retrieve,
 };

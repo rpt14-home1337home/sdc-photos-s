@@ -5,202 +5,170 @@
   font-family: Roboto;
 }
 
-/* FIVE */
-
-.expand-room-container-five {
-  width: 50%;
-  margin: 4% 24%;
-  height: 1650px;
-  /* background-color: lightgreen; */
-}
-
-.expand-room-name-five {
+.expand-room-name {
   color: rgb(72, 72, 72);
   font-size: 32;
   font-weight: 500;
   line-height: 1.125em;
+  margin: 0px 7px 0px 7px;
 }
 
-.expand-room-details-five {
+.expand-room-details {
   color: #767676;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.375em;
   padding-top: 3px;
+  margin: 0px 7px 25px 7px;
 }
 
-.expand-photo-one-five {
-  width: 100%;
-  height: 650px;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 2% 0% 1.5% 0%;
+.grid-box {
+  border: 1px solid #727272;
+  margin: 7px;
 }
 
-.expand-photo-two-five {
-  width: 33%;
-  height: 12%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0%;
-  /* display: block; */
-}
+/* FIVE FRAME */
 
-/* how to fix this and make it not so static */
-.expand-photo-three-five {
-  width: 65.1%;
-  height: 24.86%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0.4%;
-  left: 34.5%;
-  position: relative;
-  bottom: 424px;
-}
-
-.expand-review-five {
-  width: 66%;
-  height: 29.2%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0%;
-  position: relative;
-  bottom: 25.6%;
-}
-
-.expand-last-photo-five {
-  width: 32%;
-  height: 29.2%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0%;
-  position: relative;
-  bottom: 56.5%;
-  float: right;
-}
-
-/* FOUR */
-
-.expand-room-container-four {
-  width: 50%;
-  margin: 4% 24%;
+.five-expand-container {
+  width: 54%;
+  margin: 4% 23%;
   height: 1650px;
   /* background-color: lightgreen; */
 }
 
-.expand-room-name-four {
-  color: rgb(72, 72, 72);
-  font-size: 32;
-  font-weight: 500;
-  line-height: 1.125em;
+.five-wrapper {
+  display: grid;
+  height: 95%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  grid-template-areas:
+    "a a a"
+    "a a a"
+    "a a a"
+    "a a a"
+    "a a a"
+    "a a a"
+    "b c c"
+    "b c c"
+    "d c c"
+    "d c c"
+    "e e f"
+    "e e f"
+    "e e f"
+    "e e f"
+    "e e f"
 }
 
-.expand-room-details-four {
-  color: #767676;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.375em;
-  padding-top: 3px;
+.fiveframe-expand-box-one {
+  grid-area: a;
 }
 
-.expand-photo-one-four {
-  width: 100%;
-  height: 650px;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 2% 0% 1.5% 0%;
+.fiveframe-expand-box-two {
+  grid-area: b;
 }
 
-.expand-photo-two-four {
-  width: 33%;
-  height: 12%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0%;
-  /* display: block; */
+.fiveframe-expand-box-three {
+  grid-area: c;
 }
 
-/* how to fix this and make it not so static */
-.expand-photo-three-four {
-  width: 65.1%;
-  height: 24.86%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0.4%;
-  left: 34.5%;
-  position: relative;
-  bottom: 424px;
+.fiveframe-expand-box-four {
+  grid-area: d;
 }
 
-.expand-review-four {
-  width: 100%;
-  height: 29.2%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0%;
-  position: relative;
-  bottom: 25.6%;
+.fiveframe-expand-box-five {
+  grid-area: f;
 }
 
-/* THREE */
+.fiveframe-expand-box-review {
+  grid-area: e;
+}
 
-.expand-room-container-three {
-  width: 50%;
-  margin: 4% 24%;
-  height: 1650px;
+/* FOUR FRAME */
+
+.four-expand-container {
+  width: 54%;
+  margin: 4% 23%;
+  height: 1250px;
   /* background-color: lightgreen; */
 }
 
-.expand-room-name-three {
-  color: rgb(72, 72, 72);
-  font-size: 32;
-  font-weight: 500;
-  line-height: 1.125em;
+.four-wrapper {
+  display: grid;
+  height: 93%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  grid-template-areas:
+    "a a a"
+    "a a a"
+    "a a a"
+    "a a a"
+    "a a a"
+    "a a a"
+    "c c b"
+    "c c b"
+    "c c b"
+    "c c d"
+    "c c d"
+    "c c d"
+    "e e e"
+    "e e e"
+    "e e e"
 }
 
-.expand-room-details-three {
-  color: #767676;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.375em;
-  padding-top: 3px;
+.fourframe-expand-box-one {
+  grid-area: a;
 }
 
-.expand-photo-one-three {
-  width: 100%;
-  height: 650px;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 2% 0% 1.5% 0%;
+.fourframe-expand-box-two {
+  grid-area: b;
 }
 
-.expand-photo-two-three {
-  width: 33%;
-  height: 12%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0%;
-  /* display: block; */
+.fourframe-expand-box-three {
+  grid-area: c;
 }
 
-/* how to fix this and make it not so static */
-.expand-photo-three-three {
-  width: 65.1%;
-  height: 24.86%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0.4%;
-  left: 34.5%;
-  position: relative;
-  bottom: 424px;
+.fourframe-expand-box-four {
+  grid-area: d;
 }
 
-.expand-review-three {
-  width: 100%;
-  height: 29.2%;
-  /* background-color: lightcoral; */
-  border: 1px solid #EBEBEB;
-  margin: 1.5% 0%;
-  position: relative;
-  bottom: 25.6%;
+.fourframe-expand-box-review {
+  grid-area: e;
+}
+
+/* THREE FRAME */
+
+.three-expand-container {
+  width: 54%;
+  margin: 4% 23%;
+  height: 1000px;
+  /* background-color: lightgreen; */
+}
+
+.three-wrapper {
+  display: grid;
+  height: 92%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "a a b b"
+    "a a b b"
+    "a a b b"
+    "c c c d"
+    "c c c d"
+}
+
+.threeframe-expand-box-one {
+  grid-area: a;
+}
+
+.threeframe-expand-box-two {
+  grid-area: b;
+}
+
+.threeframe-expand-box-three {
+  grid-area: c;
+}
+
+.threeframe-expand-box-review {
+  grid-area: d;
 }

@@ -12,12 +12,19 @@ class PhotoStrip extends React.Component {
       <div className="photo-container">
         <div className="photo-strip">
           {this.props.photos.map((element, index) => {
-            return (
-              <div className="single-strip-photo" key={index}>
-                {/* Needs to pass in photo from props into 'src' */}
-                <img src="" alt="photo" />
-              </div>
-            );
+            if (element === undefined) {
+              return (
+                <div className="single-strip-photo" key={index}>
+                  <img src="" alt="Loading"/>
+                </div>
+              );
+            } else {
+              return (
+                <div className="single-strip-photo" key={index}>
+                  <img src={element.link} alt="Loaded" className="single-collapse-photo"/>
+                </div>
+              );
+            }
           })}
         </div>
         <div className="photo-strip-title">{this.props.title}</div>

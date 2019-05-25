@@ -54,3 +54,9 @@
   margin-right: 2%;
   float: left;
 }
+
+.single-collapse-photo {
+  height: 100px;
+  width: 100px;
+  border-radius: 4px;
+}
