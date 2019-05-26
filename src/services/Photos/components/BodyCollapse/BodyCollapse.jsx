@@ -6,57 +6,41 @@ import PhotoStrip from './Sub-Components/PhotoStrip.jsx';
 
 const BodyCollapse = (props) => {
 
-  function randomize(arr, count) {
-
-    const result = [];
-    const copyArr = arr.slice();
-    let i = 0;
-    let int;
-
-    while (i < count) {
-      int = Math.floor(Math.random() * copyArr.length);
-      result.push(copyArr[int]);
-      copyArr.splice(int, 1);
-      i++;
-    }
-    return result;
-  }
-
   return (
     <div className="body-container">
       <div className="body-title">All rooms</div>
       <PhotoStrip
         title="Living Room"
-        photos={randomize(props.photos.livingRoom, 5)}
+        photos={props.photos.livingRoom}
       />
-      {/* <PhotoStrip
+      <PhotoStrip
         title="Kitchen"
-        photos={['photo1', 'photo2', 'photo3', 'photo4', 'photo5']}
+        photos={props.photos.kitchen}
       />
       <PhotoStrip
         title="Bedroom"
-        photos={['photo1', 'photo2', 'photo3', 'photo4']}
+        photos={props.photos.bedroom}
       />
       <PhotoStrip
         title="Bathroom"
-        photos={['photo1', 'photo2', 'photo3']}
+        photos={props.photos.bathroom}
       />
       <PhotoStrip
         title="Interior"
-        photos={['photo1', 'photo2', 'photo3', 'photo4']}
+        photos={props.photos.interior}
       />
       <PhotoStrip
         title="Other"
-        photos={['photo1', 'photo2', 'photo3']}
+        photos={props.photos.other}
       />
       <PhotoStrip
         title="Backyard"
-        photos={['photo1', 'photo2', 'photo3']}
+        photos={props.photos.backyard}
       />
       <PhotoStrip
         title="Pets"
-        photos={['photo1', 'photo2', 'photo3']}
-      /> */}
+        photos={props.photos.pets}
+      />
     </div>
   );
 }

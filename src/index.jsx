@@ -73,16 +73,32 @@ class App extends React.Component {
           }
         }
 
+        function randomize(arr, count) {
+
+          const result = [];
+          const copyArr = arr.slice();
+          let i = 0;
+          let int;
+
+          while (i < count) {
+            int = Math.floor(Math.random() * copyArr.length);
+            result.push(copyArr[int]);
+            copyArr.splice(int, 1);
+            i++;
+          }
+          return result;
+        }
+
         this.setState({
           photos: {
-            livingRoom,
-            kitchen,
-            bedroom,
-            bathroom,
-            interior,
-            other,
-            backyard,
-            pets,
+            livingRoom: randomize(livingRoom, 5),
+            kitchen: randomize(kitchen, 5),
+            bedroom: randomize(bedroom, 4),
+            bathroom: randomize(bathroom, 3),
+            interior: randomize(interior, 4),
+            other: randomize(other, 3),
+            backyard: randomize(backyard, 3),
+            pets: randomize(pets, 3),
           },
         });
       })
