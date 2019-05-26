@@ -50,7 +50,7 @@
   width: 100px;
   border-radius: 4px;
   /* background-color: lightgoldenrodyellow; */
-  border: 1px solid #EBEBEB;
+  /* border: 1px solid #EBEBEB; */
   margin-right: 2%;
   float: left;
 }
@@ -59,4 +59,5 @@
   height: 100px;
   width: 100px;
   border-radius: 4px;
+  object-fit: cover;
 }

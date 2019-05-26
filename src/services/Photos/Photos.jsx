@@ -9,7 +9,7 @@ class Photos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isCollapsed: true,
+      isCollapsed: false,
       buttonText: 'Tour this home',
     };
     this.onClick = this.onClick.bind(this);
