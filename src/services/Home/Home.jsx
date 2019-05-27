@@ -12,7 +12,7 @@ const Home = (props) => {
       <Navigation />
       <Splash />
       <Description />
-      <Gallery callback={props.callback} />
+      <Gallery callback={props.callback} photos={props.photos}/>
     </div>
   );
 };

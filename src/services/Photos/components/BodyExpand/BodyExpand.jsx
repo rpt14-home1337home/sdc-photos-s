@@ -12,42 +12,42 @@ const BodyExpand = (props) => {
       <FivePhotoTemplate
         photos={props.photos.livingRoom}
         room="Living room"
-        details="[Insert] Details about living room"
+        details="Smart TV, Modern, Comfortable couch, Relaxing"
       />
       <FivePhotoTemplate
         photos={props.photos.kitchen}
         room="Kitchen"
-        details="[Insert] Details about kitchen"
+        details="Beautiful, Modern, Fully equipped, Comfortable, Spacious"
       />
       <FourPhotoTemplate
         photos={props.photos.bedroom}
         room="Bedroom"
-        details="[Insert] Details about bedroom"
+        details="Soothing, Spacious with plenty of natrual light"
       />
       <ThreePhotoTemplate
         photos={props.photos.bathroom}
         room="Bathroom"
-        details="[Insert] Details about bathroom"
+        details="Modern, Bright, Soothing & relaxing"
       />
       <FourPhotoTemplate
         photos={props.photos.interior}
         room="Interior"
-        details="[Insert] Details about interior"
+        details="Beautifully decorated, Ready for your enjoyment"
       />
       <ThreePhotoTemplate
         photos={props.photos.other}
         room="Other spaces"
-        details="[Insert] Details about other"
+        details="Extra rooms, Pretty arrangements & more"
       />
       <ThreePhotoTemplate
         photos={props.photos.backyard}
         room="Backyard"
-        details="[Insert] Details about backyard"
+        details="Great views, Minutes from the beach, Relax and unwind"
       />
       <ThreePhotoTemplate
         photos={props.photos.pets}
         room="Pets"
-        details="[Insert] Details about pets"
+        details="Play fetch, ready for belly rubs, always a good boy"
       />
     </div>
   );

@@ -5,13 +5,11 @@ import ReactDOM from 'react-dom';
 import Home from './services/Home/Home.jsx';
 import Photos from './services/Photos/Photos.jsx';
 
-// GET PHOTOS HERE, SO YOU CAN PASS TO MAIN PAGE, PHOTO GALLERY PAGE, AND PHOTO DETAILS PAGE
-
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      isHome: false,
+      isHome: true,
       photos: {
         livingRoom: [],
         kitchen: [],
