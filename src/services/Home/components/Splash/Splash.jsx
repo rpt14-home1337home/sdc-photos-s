@@ -8,7 +8,7 @@ import Image from './Sub-Components/Image.jsx';
 import HeartButton from './Sub-Components/HeartButton.jsx';
 import TourHomeButton from './Sub-Components/TourHomeButton.jsx';
 
-const Splash = () => {
+const Splash = (props) => {
   return (
     <div>
       <div className="left-splash">
@@ -21,7 +21,7 @@ const Splash = () => {
       <div className="right-splash">
         <Image />
         <HeartButton />
-        <TourHomeButton />
+        <TourHomeButton callback={props.callback} />
       </div>
     </div>
   );

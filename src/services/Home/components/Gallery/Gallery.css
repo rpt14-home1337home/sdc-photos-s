@@ -39,6 +39,7 @@
   /* background-color: lavender; */
   /* border: 1px solid #484848; */
   position: relative;
+  cursor: pointer;
 }
 
 .homepage-single-photo {
@@ -65,4 +66,5 @@
   font-weight: 500;
   line-height: 1.375em;
   margin: 32px 128px;
+  cursor: pointer;
 }

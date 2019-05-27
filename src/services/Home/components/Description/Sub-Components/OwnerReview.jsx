@@ -30,7 +30,7 @@ const OwnerReview = () => {
 
       <div className="review-commentary-box">
         <div className="quote-comment">
-          "Airbnb's most wish-listed listing in South Africa"
+          "Airbnb's most wish-listed listing in North America"
         </div>
         <div className="host-comment">Hosted by Spongebob</div>
       </div>

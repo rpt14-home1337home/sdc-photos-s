@@ -10,7 +10,7 @@ const Home = (props) => {
   return (
     <div>
       <Navigation />
-      <Splash />
+      <Splash callback={props.callback}/>
       <Description />
       <Gallery callback={props.callback} photos={props.photos}/>
     </div>

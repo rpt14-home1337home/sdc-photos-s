@@ -72,7 +72,6 @@ class App extends React.Component {
         }
 
         function randomize(arr, count) {
-
           const result = [];
           const copyArr = arr.slice();
           let i = 0;
@@ -115,7 +114,13 @@ class App extends React.Component {
     if (this.state.isHome) {
       return <Home callback={this.onClick} photos={this.state.photos} />;
     } else {
-      return <Photos callback={this.onClick} photos={this.state.photos} />;
+      return (
+        <Photos
+          isCollapsed={false}
+          callback={this.onClick}
+          photos={this.state.photos}
+        />
+      );
     }
   }
 }

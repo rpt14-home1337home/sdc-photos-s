@@ -66,7 +66,7 @@
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('https://wallpapercave.com/wp/wp2406713.jpg')
+  background-image: url('https://design-milk.com/images/2013/04/House-Abo-Nico-VD-Meulen-1.jpg')
   /* font-size: 28px;
   line-height: 34px;
   max-height: 204px; */
@@ -121,6 +121,7 @@ textarea:focus {
   width: 168px;
   height: 36px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .tour-icon {

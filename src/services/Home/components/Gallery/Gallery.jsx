@@ -60,7 +60,7 @@ class Gallery extends React.Component {
               callback={this.props.callback}
             />
           </div>
-          <div className="explore-more-title">Explore all 26 photos</div>
+          <div className="explore-more-title" onClick={this.props.callback}>Explore all 26 photos</div>
         </div>
       );
     } else {
