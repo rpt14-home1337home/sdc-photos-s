@@ -10,7 +10,7 @@ class Text extends React.Component {
   render() {
     return (
       <div className="splash-text">
-        <span>Modern, Chic Penthouse with Mountain, City, & Sea Views</span>
+        <span>Modern Penthouse with beautiful mountain and ocean views</span>
       </div>
     );
   }

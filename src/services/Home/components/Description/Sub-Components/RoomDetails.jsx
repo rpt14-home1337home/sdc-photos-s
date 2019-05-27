@@ -5,10 +5,10 @@ const RoomDetails = () => {
     <div className="left-description-box">
       <div className="description-room-details">
         <div className="description-accommodations">
-          <div className="description-blueprint">3 guests</div>
-          <div className="description-blueprint">1 bedroom</div>
-          <div className="description-blueprint">1 bed</div>
-          <div className="description-blueprint">1.5 baths</div>
+          <div className="description-blueprint">10 guests</div>
+          <div className="description-blueprint">6 bedrooms</div>
+          <div className="description-blueprint">6 beds</div>
+          <div className="description-blueprint">3.5 baths</div>
         </div>
       </div>
       <div className="room-description">

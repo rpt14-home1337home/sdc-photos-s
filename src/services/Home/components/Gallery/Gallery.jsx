@@ -12,7 +12,6 @@ class Gallery extends React.Component {
     };
   }
   render() {
-    console.log('here', this.props.photos);
 
     if (this.props.photos.livingRoom.length) {
       return (
