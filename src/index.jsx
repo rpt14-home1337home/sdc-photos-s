@@ -10,6 +10,7 @@ class App extends React.Component {
     super();
     this.state = {
       isHome: true,
+      yAxis: 0,
       photos: {
         livingRoom: [],
         kitchen: [],
@@ -104,21 +105,83 @@ class App extends React.Component {
       });
   }
 
-  onClick() {
-    this.setState({
-      isHome: !this.state.isHome,
-    });
+  onClick(room) {
+    switch (room) {
+      case 'Living room':
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 50,
+        });
+        break;
+      case 'Kitchen':
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 1775,
+        });
+        break;
+      case 'Bedroom':
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 3500,
+        });
+        break;
+      case 'Bathroom':
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 4825,
+        });
+        break;
+      case 'Interior':
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 5900,
+        });
+        break;
+      case 'Other':
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 7225,
+        });
+        break;
+      case 'Backyard':
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 8300,
+        });
+        break;
+      case 'Pets':
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 9375,
+        });
+        break;
+      default:
+        this.setState({
+          isHome: !this.state.isHome,
+          yAxis: 0,
+        });
+    }
+
+    // this.setState({
+    //   isHome: !this.state.isHome,
+    // });
   }
 
   render() {
     if (this.state.isHome) {
-      return <Home callback={this.onClick} photos={this.state.photos} />;
+      return (
+        <Home
+          callback={this.onClick}
+          photos={this.state.photos}
+        />
+      );
     } else {
       return (
         <Photos
           isCollapsed={false}
           callback={this.onClick}
           photos={this.state.photos}
+          yAxis={this.state.yAxis}
         />
       );
     }

@@ -11,12 +11,13 @@ class Photos extends React.Component {
     this.state = {
       isCollapsed: this.props.isCollapsed,
       buttonText: 'View all rooms',
+      yAxis: this.props.yAxis,
     };
     this.onClick = this.onClick.bind(this);
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, this.state.yAxis);
   }
 
   onClick() {
