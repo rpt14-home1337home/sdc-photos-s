@@ -161,10 +161,6 @@ class App extends React.Component {
           yAxis: 0,
         });
     }
-
-    // this.setState({
-    //   isHome: !this.state.isHome,
-    // });
   }
 
   render() {

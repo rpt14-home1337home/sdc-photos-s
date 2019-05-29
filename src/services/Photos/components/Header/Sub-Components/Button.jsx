@@ -12,8 +12,8 @@ class Button extends React.Component {
   }
   render() {
     return (
-      <div className="photos-view-button-div">
-        <button className="photo-view-button" onClick={this.props.buttonCallback}>
+      <div className="photos-view-button-div" onClick={() => this.props.buttonCallback('default')}>
+        <button className="photo-view-button" >
           <div className="photo-button-left-div">
             <svg viewBox="0 0 16 16" className="tour-icon">
               <path d={tourIcon} />

@@ -10,7 +10,7 @@ const BodyCollapse = (props) => {
     <div className="body-container">
       <div className="body-title">All rooms</div>
       <PhotoStrip
-        title="Living Room"
+        title="Living room"
         photos={props.photos.livingRoom}
         callback={props.callback}
       />

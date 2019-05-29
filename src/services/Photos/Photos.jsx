@@ -20,11 +20,111 @@ class Photos extends React.Component {
     window.scrollTo(0, this.state.yAxis);
   }
 
-  onClick() {
-    this.setState({
-      isCollapsed: !this.state.isCollapsed,
-      buttonText: this.state.isCollapsed ? 'View all rooms' : 'Tour this home',
-    });
+  componentDidUpdate() {
+    window.scrollTo(0, this.state.yAxis);
+  }
+
+  onClick(room) {
+
+    switch (room) {
+      case 'Living room':
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: this.state.isCollapsed
+            ? 50
+            : 0,
+        });
+        break;
+      case 'Kitchen':
+        console.log('here');
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: this.state.isCollapsed
+            ? 1775
+            : 1775,
+        });
+        break;
+      case 'Bedroom':
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: this.state.isCollapsed
+            ? 3500
+            : 0,
+        });
+        break;
+      case 'Bathroom':
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: this.state.isCollapsed
+            ? 4825
+            : 0,
+        });
+        break;
+      case 'Interior':
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: this.state.isCollapsed
+            ? 5900
+            : 0,
+        });
+        break;
+      case 'Other':
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: this.state.isCollapsed
+            ? 7225
+            : 0,
+        });
+        break;
+      case 'Backyard':
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: this.state.isCollapsed
+            ? 8300
+            : 0,
+        });
+        break;
+      case 'Pets':
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: this.state.isCollapsed
+            ? 9375
+            : 0,
+        });
+        break;
+      default:
+        this.setState({
+          isCollapsed: !this.state.isCollapsed,
+          buttonText: this.state.isCollapsed
+            ? 'View all rooms'
+            : 'Tour this home',
+          yAxis: 0,
+        });
+    }
   }
 
   render() {
@@ -36,7 +136,7 @@ class Photos extends React.Component {
           buttonText={this.state.buttonText}
         />
         {this.state.isCollapsed ? (
-          <BodyCollapse photos={this.props.photos} callback={this.onClick}/>
+          <BodyCollapse photos={this.props.photos} callback={this.onClick} />
         ) : (
           <BodyExpand photos={this.props.photos} />
         )}
@@ -47,6 +147,6 @@ class Photos extends React.Component {
 
 Photos.defaultProps = {
   isCollapsed: true,
-}
+};
 
 export default Photos;
