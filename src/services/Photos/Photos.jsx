@@ -39,7 +39,6 @@ class Photos extends React.Component {
         });
         break;
       case 'Kitchen':
-        console.log('here');
         this.setState({
           isCollapsed: !this.state.isCollapsed,
           buttonText: this.state.isCollapsed

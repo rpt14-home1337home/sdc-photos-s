@@ -26,7 +26,6 @@ app.get('/data', (req, res) => {
   const search = 'LivingRoom';
 
   fetch(
-    // `https://api.unsplash.com/search/photos/?query=${search}&client_id=${key.UNSPLASH_API_KEY}`,
     `https://api.unsplash.com/collections/${collections[search]}/photos/?client_id=${key.UNSPLASH_API_KEY}`,
     {
       method: 'GET',
@@ -37,15 +36,15 @@ app.get('/data', (req, res) => {
   )
     .then((res) => res.json())
     .then((data) => {
-      // for (let i = 0; i < data.length; i++) {
-      //   dbConnection.insertIntoDB(
-      //     data[i].id,
-      //     data[i].likes,
-      //     data[i].user.username,
-      //     data[i].urls.regular,
-      //     search,
-      //   );
-      // }
+      for (let i = 0; i < data.length; i++) {
+        dbConnection.insertIntoDB(
+          data[i].id,
+          data[i].likes,
+          data[i].user.username,
+          data[i].urls.regular,
+          search,
+        );
+      }
       res.send(data);
     });
 });
