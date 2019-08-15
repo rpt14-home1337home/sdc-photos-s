@@ -1,9 +1,10 @@
-const mysql = require('mysql');
+const cred = require("./../src/config/dbcreds.js");
+const mysql = require("mysql");
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'airbnb',
+  host: "localhost",
+  user: "root",
+  password: "MyNewPass",
+  database: "airbnb"
 });
 
 connection.connect();
@@ -19,7 +20,7 @@ const insertIntoDB = (id, likes, username, link, tag, photoSet) => {
   });
 };
 
-const retrieve = (callback) => {
+const retrieve = callback => {
   const sql = `SELECT *
                FROM photos`;
 
@@ -36,5 +37,5 @@ const retrieve = (callback) => {
 
 module.exports = {
   insertIntoDB,
-  retrieve,
+  retrieve
 };
