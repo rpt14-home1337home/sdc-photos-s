@@ -9,13 +9,18 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-const insertIntoDB = (id, likes, username, link, tag, photoSet) => {
+const insertIntoDB = (data, callback) => {
+  var {id, likes, user, urls, interior, photoSet} = data;
+  //console.log(data);
   const sql = `INSERT INTO photos (id, likes, username, link, tag, photo_set)
-               VALUES ('${id}', '${likes}', '${username}', '${link}', '${tag}', '${photoSet}')`;
+               VALUES ('${id}', '${likes}', '${user.username}', '${urls.regular}', '${interior}', '${photoSet}')`;
 
   connection.query(sql, (err, row) => {
     if (err) {
       console.log(err);
+    }
+    else {
+      callback(err,'success')
     }
   });
 };
@@ -33,9 +38,12 @@ const retrieve = callback => {
   });
 };
 
-// connection.end();
+const dbend = () => {
+  connection.end();
+}
 
 module.exports = {
   insertIntoDB,
-  retrieve
+  retrieve,
+  dbend
 };

@@ -11,7 +11,8 @@ const collections = {
   backyard: "4944404",
   pets: "4944391",
   interior: "4944387",
-  other: "4944365"
+  other: "4944365",
+  white: "1127156"
 };
 
 const seed = () => {
@@ -44,18 +45,30 @@ const seed = () => {
         };
 
         for (let i = 0; i < data.length; i++) {
+          //console.log(data);
+          // dbConnection.insertIntoDB(
+          //   data[i].id,
+          //   data[i].likes,
+          //   data[i].user.username,
+          //   data[i].urls.regular,
+          //   interior === "livingRoom" ? "living room" : interior,
+          //   photoSet[i]
+          // );
+          data[i]['interior'] = interior;
+          data[i]['photoSet'] = photoSet[i];
+          console.log("INFO ===> ", data[i]);
           dbConnection.insertIntoDB(
-            data[i].id,
-            data[i].likes,
-            data[i].user.username,
-            data[i].urls.regular,
-            interior === "livingRoom" ? "living room" : interior,
-            photoSet[i]
+            data[i],
+            (err,msg) => {
+              if (err) throw err;
+              //else console.log(msg);
+            }
           );
         }
       });
     console.log(`[Seeded]: ${interior}`);
   }
+  
   return "Seeding Completed";
 };
 

@@ -10,10 +10,37 @@ app.use(bodyParser.json());
 
 app.get("/retrieve", (req, res) => {
   dbConnection.retrieve(data => {
-    console.log("SERVER SIDE ==> ", data);
     res.send(data);
   });
 });
+
+//CRUD Operations -> CREATE
+app.post("/addphotoset", (req, res) => {
+  console.log("REQ => ", req.body);
+
+  var reqBody = {
+    id: req.body.id, 
+    likes: req.body.likes, 
+    username: req.body.username,
+    link: req.body.link,
+    tag: req.body.tag,
+    photoSet: req.body.photoSet
+  };
+
+  dbConnection.insertIntoDB(
+    reqBody, (err,results) => {
+      err ? res.status(500).send(err) : res.status(200).send(results);
+    }
+  );
+});
+
+//CRUD Operations -> READ
+
+
+//CRUD Operations -> UPDATE
+
+
+//CRUD Operations -> DELETE
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
