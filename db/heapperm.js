@@ -1,11 +1,11 @@
 // Purpose is to create every permutation from the elements in the array
 // We can do this by using Heap's algorithm
 //var start = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-var start = [0,1,2];
+var start = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var rs = [];
 // Get the permutations
 generate(start.length, start);
-
+console.log(rs.length);
 // Generate the permutation for a given n (amount of elements) and a given array
 
 function generate(n, arr) {

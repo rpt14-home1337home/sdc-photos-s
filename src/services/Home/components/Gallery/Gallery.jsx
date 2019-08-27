@@ -12,7 +12,6 @@ class Gallery extends React.Component {
     };
   }
   render() {
-
     if (this.props.photos.livingRoom.length) {
       return (
         <div className="gallery-box">
