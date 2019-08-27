@@ -1,3 +1,4 @@
+// Please remove my comments after you make changes or review my comments
 /*
 1. Take existing photos from the database and perform heap permutation
 2. Throlle csv file creation of the 80 to 83 photos found in the database
@@ -6,16 +7,18 @@ const permutations = require("./heapperm.js");
 const createCsvWriter = require('csv-writer').createArrayCsvWriter;
 const csvWriter = createCsvWriter({
     path: `${__dirname}/inputfile.csv`,
-    append: true
+    append: true // <-- this is used to configure your csv write to append to a file
+    // are you adding a header line to your csv file?
 });
 const mysql = require("mysql");
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "MyNewPass",
-  database: "airbnb"
+  host: "localhost", // <-- these should be env vars, ideally
+  user: "root", // <-- these should be env vars, ideally
+  password: "MyNewPass", // <-- these should be env vars, ideally
+  database: "airbnb" // <-- these should be env vars, ideally
 });
 var dataset = [], writeMode = true; // writeMode true means Write New, false means Append
+//                  ^ What do you need writeMode for? Seems unused
 var sequence = permutations.rs;
 //console.log(sequence);
 connection.connect();
@@ -76,6 +79,10 @@ const createBigData = () => {
       sequence[index].forEach(el => {
         if (dataset.length % 10000 === 0) {
           csvWriter.writeRecords(dataset);       // returns a promise
+            // ^ returns a promise, but you are not handling the promise accordingly.
+            // This might cause a race condition and most likely why the script is eating up RAM
+            // Check stackoverflow for while loops with promises. 
+            // Maybe try async await. https://levelup.gitconnected.com/async-await-vs-promises-4fe98d11038f
           dataset = [].slice();
         }
         dataset.push([++index, data[el].likes, data[el].username, data[el].link, data[el].tag, data[el].photo_set].slice());
@@ -86,6 +93,7 @@ const createBigData = () => {
       csvWriter.writeRecords(dataset);
     }
     
+      // clean up your commented code below!
     // sequence.forEach((sq,idx) => {
     //   sq.forEach((el, idy) => {
     //     //console.log("DATA ==> ",data[el].id);
