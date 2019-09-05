@@ -2,12 +2,14 @@
 1. Take existing photos from the database and perform heap permutation
 2. Throlle csv file creation of the 80 to 83 photos found in the database
 */
+const fs = require("fs");
+const promise = require("bluebird");
+const output = __dirname + "/inputfile.csv";
+const fsAsync = promise.promisifyAll(fs);
+const exec = require("child_process").exec;
+
 const permutations = require("./heapperm.js");
-const createCsvWriter = require('csv-writer').createArrayCsvWriter;
-const csvWriter = createCsvWriter({
-    path: `${__dirname}/inputfile.csv`,
-    append: true
-});
+
 const mysql = require("mysql");
 const connection = mysql.createConnection({
   host: "localhost",
@@ -15,15 +17,16 @@ const connection = mysql.createConnection({
   password: "MyNewPass",
   database: "airbnb"
 });
-var dataset = [], writeMode = true; // writeMode true means Write New, false means Append
+var dataset = "",
+  writeMode = true; // writeMode true means Write New, false means Append
 var sequence = permutations.rs;
-//console.log(sequence);
+console.log(sequence);
 connection.connect();
 
 const retrieve = callback => {
-  const sql = `select 
+  const sql = `select
                 case
-                  when ph.photo_set = 'one' then 1 
+                  when ph.photo_set = 'one' then 1
                   when ph.photo_set = 'two' then 2
                   when ph.photo_set = 'three' then 3
                   when ph.photo_set = 'four' then 4
@@ -35,9 +38,9 @@ const retrieve = callback => {
                   else 0
                 end setno,ph.*
                 from photos ph
-                order by 
+                order by
                   case
-                    when ph.photo_set = 'one' then 1 
+                    when ph.photo_set = 'one' then 1
                     when ph.photo_set = 'two' then 2
                     when ph.photo_set = 'three' then 3
                     when ph.photo_set = 'four' then 4
@@ -49,7 +52,7 @@ const retrieve = callback => {
                     else 0
                   end
                 `;
-  
+
   connection.query(sql, (err, row) => {
     if (err) {
       console.log(err);
@@ -62,45 +65,53 @@ const retrieve = callback => {
 };
 
 const createBigData = () => {
-  var index = 0, seqLength = sequence.length;
+  var index = 0,
+    phset = 1,
+    seqLength = sequence.length;
   retrieve(data => {
     //Data contains array of photsets
     //Generate heapPermutations of photosets
     //console.log("TEST ==> ",data.length);
-    
-    
-    //data.forEach((el,idx) => dataset.push([el.id,el.likes,el.username,el.link,el.tag,el.photo_set]))
-    
-    while (seqLength > 0) {
-      //Take first sequence and write this as set 0
-      sequence[index].forEach(el => {
-        if (dataset.length % 10000 === 0) {
-          csvWriter.writeRecords(dataset);       // returns a promise
-          dataset = [].slice();
-        }
-        dataset.push([++index, data[el].likes, data[el].username, data[el].link, data[el].tag, data[el].photo_set].slice());
-        seqLength--;
-      });
-    }
-    if (dataset.length > 0) {
-      csvWriter.writeRecords(dataset);
-    }
-    
-    // sequence.forEach((sq,idx) => {
-    //   sq.forEach((el, idy) => {
-    //     //console.log("DATA ==> ",data[el].id);
-    //     dataset.push([++index, data[el].likes, data[el].username, data[el].link, data[el].tag, data[el].photo_set].slice());
-    //     // csvWriter.writeRecords(dataset)       // returns a promise
-    //     if (dataset.length % 10000 === 0 ) {
-    //       dataset = [].slice();
-    //     }
-    //   });
-    //   csvWriter.writeRecords(dataset);       // returns a promise
 
-    // });
+    //data.forEach((el,idx) => dataset.push([el.id,el.likes,el.username,el.link,el.tag,el.photo_set]))
+    fsAsync
+      .writeFileAsync(output, "USE airbnb; TRUNCATE photobigdata;\n")
+      .then(() => {
+        while (seqLength > 0) {
+          //Take first sequence and write this as set 0
+          sequence[index].forEach(el => {
+            if (dataset.length > 0 && dataset.length % 10000 === 0) {
+              fs.appendFileSync(output, dataset);
+              dataset = "";
+            }
+            dataset += `${++index},${data[el].likes},${data[el].username},${
+              data[el].link
+            },${data[el].tag},${phset}\n`;
+            seqLength--;
+          });
+        }
+        if (dataset.length > 0) {
+          fs.appendFileSync(output, dataset);
+        }
+      })
+      .then(() => {
+        //LOAD DATA INFILE '/path/to/products.csv' INTO TABLE products;
+        console.log("Begin mySQL insertion");
+        exec(
+          `LOAD DATA INFILE ${output} INTO TABLE photobigdata`,
+          (stdout, stderr) => {
+            if (stderr) {
+              console.log(stderr);
+            } else {
+              console.log(stdout);
+            }
+          }
+        );
+      })
+      .catch(err => {
+        throw err;
+      });
   });
-  
 };
 
 createBigData();
-    

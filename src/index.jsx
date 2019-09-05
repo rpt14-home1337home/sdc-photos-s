@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 // Services
-import Home from './services/Home/Home.jsx';
-import Photos from './services/Photos/Photos.jsx';
+import Home from "./services/Home/Home.jsx";
+import Photos from "./services/Photos/Photos.jsx";
 
 class App extends React.Component {
   constructor() {
@@ -20,21 +20,22 @@ class App extends React.Component {
         interior: [],
         other: [],
         backyard: [],
-        pets: [],
-      },
+        pets: []
+      }
     };
     this.onClick = this.onClick.bind(this);
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/retrieve', {
-      method: 'GET',
+    fetch("http://localhost:3000/retrieve", {
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-      },
+        "Content-Type": "application/json"
+      }
     })
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
+        //console.log("INDEX JSX => ", data);
         const home = [];
         const livingRoom = [];
         const kitchen = [];
@@ -46,70 +47,71 @@ class App extends React.Component {
         const pets = [];
         const photoSet = (() => {
           const randomSet = [
-            'zero',
-            'one',
-            'two',
-            'three',
-            'four',
-            'five',
-            'six',
-            'seven',
-            'eight',
-            'nine',
+            "zero",
+            "one",
+            "two",
+            "three",
+            "four",
+            "five",
+            "six",
+            "seven",
+            "eight",
+            "nine"
           ];
           return randomSet[Math.floor(Math.random() * randomSet.length)];
         })();
 
         for (let i = 0; i < data.length; i++) {
+          console.log("INDEX JSX => ", data[i].tag);
           switch (data[i].tag) {
-            case 'home':
+            case "home":
               data[i].photo_set === photoSet
-              ? home.unshift(data[i])
-              : home.push(data[i]);
+                ? home.unshift(data[i])
+                : home.push(data[i]);
               continue;
-            case 'living room':
+            case "livingRoom":
               data[i].photo_set === photoSet
-              ? livingRoom.unshift(data[i])
-              : livingRoom.push(data[i]);
+                ? livingRoom.unshift(data[i])
+                : livingRoom.push(data[i]);
               continue;
-            case 'kitchen':
+            case "kitchen":
               data[i].photo_set === photoSet
-              ? kitchen.unshift(data[i])
-              : kitchen.push(data[i]);
+                ? kitchen.unshift(data[i])
+                : kitchen.push(data[i]);
               continue;
-            case 'bedroom':
+            case "bedroom":
               data[i].photo_set === photoSet
-              ? bedroom.unshift(data[i])
-              : bedroom.push(data[i]);
+                ? bedroom.unshift(data[i])
+                : bedroom.push(data[i]);
               continue;
-            case 'bathroom':
+            case "bathroom":
               data[i].photo_set === photoSet
-              ? bathroom.unshift(data[i])
-              : bathroom.push(data[i]);
+                ? bathroom.unshift(data[i])
+                : bathroom.push(data[i]);
               continue;
-            case 'interior':
+            case "interior":
               data[i].photo_set === photoSet
-              ? interior.unshift(data[i])
-              : interior.push(data[i]);
+                ? interior.unshift(data[i])
+                : interior.push(data[i]);
               continue;
-            case 'other':
+            case "other":
               data[i].photo_set === photoSet
-              ? other.unshift(data[i])
-              : other.push(data[i]);
+                ? other.unshift(data[i])
+                : other.push(data[i]);
               continue;
-            case 'backyard':
+            case "backyard":
               data[i].photo_set === photoSet
-              ? backyard.unshift(data[i])
-              : backyard.push(data[i]);
+                ? backyard.unshift(data[i])
+                : backyard.push(data[i]);
               continue;
-            case 'pets':
+            case "pets":
               data[i].photo_set === photoSet
-              ? pets.unshift(data[i])
-              : pets.push(data[i]);
+                ? pets.unshift(data[i])
+                : pets.push(data[i]);
               continue;
           }
         }
-
+        //console.log("CONTENT OF HOME ==> ", home);
         function randomize(arr, count) {
           const result = [arr[0]];
           const copyArr = arr.slice(1);
@@ -135,69 +137,70 @@ class App extends React.Component {
             interior: randomize(interior, 4),
             other: randomize(other, 3),
             backyard: randomize(backyard, 3),
-            pets: randomize(pets, 3),
-          },
+            pets: randomize(pets, 3)
+          }
         });
+        console.log("STATE => ", this.state.photos);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(`[Error]: ${error}`);
       });
   }
 
   onClick(room) {
     switch (room) {
-      case 'Living room':
+      case "Living room":
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 50,
+          yAxis: 50
         });
         break;
-      case 'Kitchen':
+      case "Kitchen":
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 1775,
+          yAxis: 1775
         });
         break;
-      case 'Bedroom':
+      case "Bedroom":
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 3500,
+          yAxis: 3500
         });
         break;
-      case 'Bathroom':
+      case "Bathroom":
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 4825,
+          yAxis: 4825
         });
         break;
-      case 'Interior':
+      case "Interior":
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 5900,
+          yAxis: 5900
         });
         break;
-      case 'Other':
+      case "Other":
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 7225,
+          yAxis: 7225
         });
         break;
-      case 'Backyard':
+      case "Backyard":
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 8300,
+          yAxis: 8300
         });
         break;
-      case 'Pets':
+      case "Pets":
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 9375,
+          yAxis: 9375
         });
         break;
       default:
         this.setState({
           isHome: !this.state.isHome,
-          yAxis: 0,
+          yAxis: 0
         });
     }
   }
@@ -218,4 +221,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('photos'));
+ReactDOM.render(<App />, document.getElementById("photos"));

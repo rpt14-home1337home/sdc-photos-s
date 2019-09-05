@@ -20,9 +20,8 @@ const insertIntoDB = (id, likes, username, link, tag, photoSet) => {
   });
 };
 
-
 const insertBulkIntoDB = (data, callback) => {
-  var {id, likes, user, urls, interior, photoSet} = data;
+  var { id, likes, user, urls, interior, photoSet } = data;
   //console.log(data);
   const sql = `INSERT INTO photos (id, likes, username, link, tag, photo_set)
                VALUES ('${id}', '${likes}', '${user.username}', '${urls.regular}', '${interior}', '${photoSet}')`;
@@ -30,9 +29,8 @@ const insertBulkIntoDB = (data, callback) => {
   connection.query(sql, (err, row) => {
     if (err) {
       console.log(err);
-    }
-    else {
-      callback(err,'success')
+    } else {
+      callback(err, "success");
     }
   });
 };
@@ -50,7 +48,7 @@ const retrieve = callback => {
   });
 };
 
-const retrievePhotoSet = ((photoset, callback) => {
+const retrievePhotoSet = (photoset, callback) => {
   const sql = `SELECT *
                FROM photos where photo_set = ${photoset}`;
 
@@ -61,13 +59,11 @@ const retrievePhotoSet = ((photoset, callback) => {
       callback(row);
     }
   });
-});
-
-
+};
 
 const dbend = () => {
   connection.end();
-}
+};
 
 module.exports = {
   insertIntoDB,

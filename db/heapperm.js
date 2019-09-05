@@ -15,7 +15,7 @@ function generate(n, arr) {
     return;
   }
 
-  for (var i = 0; i < n; i+= 1) {
+  for (var i = 0; i < n; i += 1) {
     generate(n - 1, arr);
 
     // If n is even
@@ -33,4 +33,4 @@ function swap(arr, idxA, idxB) {
   arr[idxB] = tmp;
 }
 
-module.exports = {rs}
+module.exports = { rs };
