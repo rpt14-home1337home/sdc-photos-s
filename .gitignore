@@ -2,6 +2,7 @@
 node_modules
 
 ## API KEYS ##
+src/config/*
 src/config/unsplash.js
 src/config/dbcreds.js
 db/*.csv
