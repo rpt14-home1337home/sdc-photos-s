@@ -50,8 +50,8 @@ const retrieve = callback => {
 
 const retrievePhotoSet = (photoset, callback) => {
   const sql = `SELECT *
-               FROM photos where photo_set = ${photoset}`;
-
+               FROM photos where photo_set = '${photoset}'`;
+  console.log("QUERY ==> ", sql);
   connection.query(sql, (err, row) => {
     if (err) {
       console.log(err);
@@ -69,5 +69,6 @@ module.exports = {
   insertIntoDB,
   insertBulkIntoDB,
   retrieve,
+  retrievePhotoSet,
   dbend
 };
